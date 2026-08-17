@@ -83,6 +83,10 @@ h3 {
   text-wrap: balance;
 }
 
+p + p {
+  margin-bottom: .8em;
+}
+
 /* ==========================================================================
    Layout
    ========================================================================== */
@@ -179,6 +183,7 @@ main {
 
 .hero .tagline {
   margin-block-start: var(--space-xs);
+  margin-block-end: var(--space-md);
 }
 
 .card {
