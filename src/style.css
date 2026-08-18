@@ -9,7 +9,7 @@
   --color-accent: #2dd4bf;
   --color-todo: #d29922;
   --color-border: #30363d;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", system-ui, Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -35,6 +35,11 @@
 
 html {
   color-scheme: dark;
+  /* 137.5% ≈ 22px against the common 16px browser default, but scales
+     with the user's own font-size preference instead of overriding it.
+     This is the rem baseline — every --space-* token and rem-based
+     font-size in the site scales off this, not off body. */
+  font-size: 137.5%;
   /* clears the sticky header (~40px) plus a little breathing room */
   scroll-padding-top: calc(var(--space-lg) * 2);
 }
@@ -267,6 +272,52 @@ main {
   font-size: 1.05rem;
 }
 
+.interest-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-block-start: var(--space-md);
+}
+
+.interest-item {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.interest-item__thumb {
+  flex: 0 0 256px;
+  width: 256px;
+  aspect-ratio: 16 / 9;
+  border-radius: calc(var(--radius) - 2px);
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.interest-item__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interest-item__thumb.todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+.interest-item__content h3 {
+  font-size: 1.1rem;
+  margin-block-end: var(--space-xs);
+}
+
+.interest-item__content p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
 /* ==========================================================================
    .todo utility — dev/preview-only markers, styled to be unmistakably
    "mine," not a raw comment. Hidden in production via main.js.
@@ -290,7 +341,12 @@ main {
 /* ==========================================================================
    Responsive
    ========================================================================== */
-@media (max-width: 32rem) {
+@media (max-width: 45rem) {
+  .interest-item__thumb,
+  .interest-item__thumb.todo {
+    display: none;
+  }
+
   .site-header__inner {
     flex-direction: column;
     align-items: flex-start;
