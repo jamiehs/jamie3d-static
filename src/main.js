@@ -28,3 +28,24 @@ if (navToggle && siteNav) {
     if (event.key === 'Escape') closeNav();
   });
 }
+
+// Smooth-scroll same-page anchor links instead of the instant native jump.
+// scroll-padding-top on <html> is left in place as a fallback for the cases
+// this doesn't cover: direct links with a hash, and browser back/forward.
+function headerOffset() {
+  const header = document.querySelector('.site-header');
+  return (header ? header.getBoundingClientRect().height : 0) + 16;
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    event.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset();
+    window.scrollTo({ top, behavior: 'smooth' });
+    history.pushState(null, '', `#${id}`);
+  });
+});
