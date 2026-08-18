@@ -11,12 +11,16 @@
   <body>
     <header class="site-header">
       <div class="container site-header__inner">
-        <nav class="site-nav">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="site-nav" id="site-nav">
           <a href="#hardware">Hardware</a>
           <a href="#web-infrastructure">Web/Infra</a>
           <a href="#3d">3D Work</a>
           <a href="#video-tutorials">Video Tutorials</a>
-          <a href="#links">Links</a>
           <a href="#interests">Interests</a>
         </nav>
       </div>
@@ -187,18 +191,6 @@
         </div>
       </section>
 
-      <section id="links" class="section">
-        <div class="container">
-          <h2>Links</h2>
-          <ul class="link-list">
-            <li><a href="https://github.com/jamiehs" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://sketchfab.com/jamie3d" target="_blank" rel="noopener noreferrer">Sketchfab</a></li>
-            <li><a href="https://www.turbosquid.com/Search/Artists/Jamie-Hamel-Smith" target="_blank" rel="noopener noreferrer">TurboSquid</a></li>
-            <li><a href="mailto:jamie3d@gmail.com">jamie3d@gmail.com</a></li>
-          </ul>
-        </div>
-      </section>
-
       <section id="interests" class="section">
         <div class="container">
           <h2>Interests</h2>
@@ -254,6 +246,18 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="links" class="section">
+        <div class="container">
+          <h2>Links</h2>
+          <ul class="link-list">
+            <li><a href="https://github.com/jamiehs" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://sketchfab.com/jamie3d" target="_blank" rel="noopener noreferrer">Sketchfab</a></li>
+            <li><a href="https://www.turbosquid.com/Search/Artists/Jamie-Hamel-Smith" target="_blank" rel="noopener noreferrer">TurboSquid</a></li>
+            <li><a href="mailto:jamie3d@gmail.com">jamie3d@gmail.com</a></li>
+          </ul>
         </div>
       </section>
     </main>
