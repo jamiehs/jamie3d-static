@@ -183,7 +183,7 @@ main {
 
 .section-intro {
   color: var(--color-text-muted);
-  max-width: 48ch;
+  max-width: 65ch;
 }
 
 .section-outro,
@@ -377,10 +377,14 @@ main {
     display: flex;
     align-self: flex-end;
     margin-inline-start: 0;
+    position: relative;
+    z-index: 100;
   }
-
+  
   .site-nav {
     display: none;
+    position: relative;
+    z-index: 10;
     flex-direction: column;
     width: 100%;
     gap: 0;
