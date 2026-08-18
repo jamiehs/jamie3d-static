@@ -215,7 +215,7 @@ main {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: var(--space-md);
+  padding: var(--space-sm);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
@@ -285,6 +285,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-md);
+  row-gap: var(--space-xs);
 }
 
 .link-list a {
@@ -362,9 +363,17 @@ main {
    Responsive
    ========================================================================== */
 @media (max-width: 45rem) {
+  .interest-item {
+    display: block;
+  }
+  .interest-item__thumb {
+    margin-bottom: var(--space-xs);
+    width: 100%;
+    aspect-ratio: inherit;
+  }
   .interest-item__thumb,
   .interest-item__thumb.todo {
-    display: none;
+    display: block;
   }
 
   .site-header__inner {
