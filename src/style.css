@@ -201,6 +201,11 @@ main {
   color: var(--color-text-muted);
 }
 
+.section.hero .container {
+  max-width: 80ch;
+  margin-inline-start: 0;
+}
+
 .hero h1 {
   font-size: clamp(2.25rem, 1.7rem + 2.5vw, 3.5rem);
 }
